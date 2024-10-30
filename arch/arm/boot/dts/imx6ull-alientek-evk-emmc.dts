@@ -143,6 +143,12 @@
 			spi-max-frequency = <100000>;
 		};
 	};
+
+	/*自定义节点*/
+	mytestnode: mytest@0101{
+
+	};
+
 };
 
 &cpu0 {
@@ -763,4 +769,10 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_wdog>;
 	fsl,wdog_b;
+};
+
+&intc {
+	mytestnode{
+
+	};
 };
