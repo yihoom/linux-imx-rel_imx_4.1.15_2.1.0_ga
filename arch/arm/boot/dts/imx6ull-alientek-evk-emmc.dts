@@ -172,7 +172,7 @@
 		compatible = "alientek,gpioled";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_gpioled>;
-		led-gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
+		//led-gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
 		status = "okay";
 	};
 
@@ -192,6 +192,19 @@
 		interrupt-parent = <&gpio1>;
 		interrupts = <18 IRQ_TYPE_EDGE_BOTH>;
 		status = "okay";
+	};
+
+	dtsleds{
+		compatible = "gpio-leds";
+		
+		led0{
+			label = "red";
+			pinctrl-names = "default";
+			pinctrl-0 = <&pinctrl_gpioled>;
+			gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
+			default-state = "on";
+			linux,default-trigger = "heartbeat";
+		};
 	};
 
 
