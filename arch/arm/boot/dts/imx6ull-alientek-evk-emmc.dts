@@ -177,7 +177,7 @@
 	};
 
 	beepled{
-		compatible = "alientek,beepled";
+		compatible = "alientek,beep";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_beep>;
 		beep-gpios = <&gpio5 1 GPIO_ACTIVE_LOW>;
@@ -202,8 +202,8 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&pinctrl_gpioled>;
 			gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
-			default-state = "on";
-			linux,default-trigger = "heartbeat";
+			default-state = "off";
+			// linux,default-trigger = "heartbeat";
 		};
 	};
 
